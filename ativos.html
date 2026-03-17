@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfraControl | Ativos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">IC</div>
+        <div>
+          <h2>InfraControl</h2>
+          <p>Operations Suite</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Dashboard</a>
+        <a href="chamados.html">Chamados</a>
+        <a href="ativos.html" class="active">Ativos</a>
+        <a href="usuarios.html">Usuários</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="#" id="logoutBtn">Sair</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div>
+            <span class="page-kicker">Asset Management</span>
+            <h1>Controle de Ativos</h1>
+            <p>Cadastre, monitore e administre equipamentos corporativos.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggle" class="theme-toggle">🌙</button>
+          <div class="user-box">
+            <span>Administrador</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Novo Ativo</h2>
+            <p>Preencha os dados do equipamento.</p>
+          </div>
+          <span class="table-chip">Asset Register</span>
+        </div>
+
+        <form id="assetForm" class="ticket-form">
+          <input type="hidden" id="assetEditIndex">
+
+          <div class="form-group">
+            <label for="assetNome">Equipamento</label>
+            <input type="text" id="assetNome" placeholder="Ex.: Notebook Dell Latitude" required>
+          </div>
+
+          <div class="form-group">
+            <label for="assetLocal">Local</label>
+            <input type="text" id="assetLocal" placeholder="Ex.: Expedição" required>
+          </div>
+
+          <div class="form-group">
+            <label for="assetStatus">Status</label>
+            <select id="assetStatus" required>
+              <option value="">Selecione</option>
+              <option value="Operacional">Operacional</option>
+              <option value="Em uso">Em uso</option>
+              <option value="Manutenção">Manutenção</option>
+              <option value="Disponível">Disponível</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="assetCategoria">Categoria</label>
+            <select id="assetCategoria" required>
+              <option value="">Selecione</option>
+              <option value="Notebook">Notebook</option>
+              <option value="Desktop">Desktop</option>
+              <option value="Scanner">Scanner</option>
+              <option value="Impressora">Impressora</option>
+              <option value="Monitor">Monitor</option>
+            </select>
+          </div>
+
+          <button type="submit" id="assetSubmitButton" class="primary-button">
+            Cadastrar Ativo
+          </button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Busca e Filtros</h2>
+            <p>Localize ativos rapidamente.</p>
+          </div>
+        </div>
+
+        <div class="filter-grid">
+          <div class="form-group">
+            <label for="assetSearchInput">Buscar</label>
+            <input type="text" id="assetSearchInput" placeholder="Buscar por equipamento, categoria ou local">
+          </div>
+
+          <div class="form-group">
+            <label for="assetStatusFilter">Status</label>
+            <select id="assetStatusFilter">
+              <option value="todos">Todos os status</option>
+              <option value="operacional">Operacional</option>
+              <option value="em uso">Em uso</option>
+              <option value="manutenção">Manutenção</option>
+              <option value="disponível">Disponível</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Lista de Ativos</h2>
+            <p>Controle visual dos equipamentos corporativos.</p>
+          </div>
+          <span class="table-chip">Hardware Inventory</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Equipamento</th>
+                <th>Categoria</th>
+                <th>Status</th>
+                <th>Local</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="ativosTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

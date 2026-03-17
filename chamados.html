@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfraControl | Chamados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">IC</div>
+        <div>
+          <h2>InfraControl</h2>
+          <p>Operations Suite</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Dashboard</a>
+        <a href="chamados.html" class="active">Chamados</a>
+        <a href="ativos.html">Ativos</a>
+        <a href="usuarios.html">Usuários</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="#" id="logoutBtn">Sair</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar topbar-ticket-page">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div>
+            <span class="page-kicker">Módulo Premium</span>
+            <h1>Service Desk Command Center</h1>
+            <p>Uma interface moderna para gestão de incidentes, produtividade e visibilidade operacional.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggle" class="theme-toggle">🌙</button>
+          <div class="user-box">
+            <span>Administrador</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="ticket-premium-hero">
+        <div class="ticket-premium-left">
+          <span class="hero-badge">Portfólio Premium</span>
+          <h2>Central inteligente de chamados para operação de TI</h2>
+          <p>
+            Projeto com foco em legibilidade, fluxo operacional, visual corporativo e organização de tickets
+            com estética próxima de produtos reais de mercado.
+          </p>
+        </div>
+
+        <div class="ticket-premium-right">
+          <div class="premium-stat-card">
+            <span>Total</span>
+            <strong id="cardTotal">0</strong>
+          </div>
+          <div class="premium-stat-card">
+            <span>Abertos</span>
+            <strong id="cardAbertos">0</strong>
+          </div>
+          <div class="premium-stat-card">
+            <span>Em andamento</span>
+            <strong id="cardAndamento">0</strong>
+          </div>
+          <div class="premium-stat-card">
+            <span>Resolvidos</span>
+            <strong id="cardResolvidos">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticket-premium-grid">
+        <div class="ticket-main-column">
+          <section class="panel form-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Abrir novo chamado</h2>
+                <p>Registre ocorrências com prioridade e status operacional.</p>
+              </div>
+              <span class="table-chip">Novo Ticket</span>
+            </div>
+
+            <form id="ticketForm" class="ticket-form">
+              <input type="hidden" id="editIndex">
+
+              <div class="form-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" placeholder="Ex.: Camila Souza" required>
+              </div>
+
+              <div class="form-group">
+                <label for="problema">Problema</label>
+                <input type="text" id="problema" placeholder="Ex.: Falha de autenticação no Active Directory" required>
+              </div>
+
+              <div class="form-group">
+                <label for="prioridade">Prioridade</label>
+                <select id="prioridade" required>
+                  <option value="">Selecione</option>
+                  <option value="Alta">Alta</option>
+                  <option value="Média">Média</option>
+                  <option value="Baixa">Baixa</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" required>
+                  <option value="">Selecione</option>
+                  <option value="Aberto">Aberto</option>
+                  <option value="Em andamento">Em andamento</option>
+                  <option value="Resolvido">Resolvido</option>
+                </select>
+              </div>
+
+              <button type="submit" id="submitButton" class="primary-button">
+                Cadastrar Chamado
+              </button>
+            </form>
+          </section>
+
+          <section class="panel filters-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Busca e filtros</h2>
+                <p>Encontre rapidamente qualquer ticket.</p>
+              </div>
+            </div>
+
+            <div class="filter-grid">
+              <div class="form-group">
+                <label for="searchInput">Buscar</label>
+                <input type="text" id="searchInput" placeholder="Buscar por ID, usuário ou problema">
+              </div>
+
+              <div class="form-group">
+                <label for="statusFilter">Status</label>
+                <select id="statusFilter">
+                  <option value="todos">Todos os status</option>
+                  <option value="aberto">Aberto</option>
+                  <option value="andamento">Em andamento</option>
+                  <option value="resolvido">Resolvido</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel table-panel table-panel-highlight premium-ticket-table-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Fila de chamados</h2>
+                <p>Visual premium com foco em leitura rápida e aparência de produto corporativo.</p>
+              </div>
+              <span class="table-chip">Service Desk UI</span>
+            </div>
+
+            <div class="table-wrapper premium-table-wrapper">
+              <table class="data-table premium-table premium-ticket-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Usuário</th>
+                    <th>Problema</th>
+                    <th>Prioridade</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="chamadosTable"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <aside class="ticket-side-column">
+          <section class="panel premium-side-panel">
+            <div class="panel-header">
+              <h2>Indicadores rápidos</h2>
+            </div>
+
+            <div class="side-kpi-list">
+              <div class="side-kpi-item">
+                <span>Fila ativa</span>
+                <strong id="sideFilaAtiva">0</strong>
+              </div>
+
+              <div class="side-kpi-item">
+                <span>Incidentes críticos</span>
+                <strong id="sideCriticos">0</strong>
+              </div>
+
+              <div class="side-kpi-item">
+                <span>Resolvidos</span>
+                <strong id="sideResolvidosHoje">0</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel premium-side-panel">
+            <div class="panel-header">
+              <h2>Boas práticas</h2>
+            </div>
+
+            <ul class="premium-tips">
+              <li>Priorize tickets de impacto operacional.</li>
+              <li>Atualize status conforme a evolução do atendimento.</li>
+              <li>Use descrições claras e técnicas nos incidentes.</li>
+              <li>Mantenha consistência para facilitar relatórios.</li>
+            </ul>
+          </section>
+
+          <section class="panel premium-side-panel">
+            <div class="panel-header">
+              <h2>Resumo visual</h2>
+            </div>
+
+            <div class="chart-block">
+              <div class="chart-label-row">
+                <span>Abertos</span>
+                <span id="labelAbertosGrafico">0</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill bar-abertos" id="barAbertos"></div>
+              </div>
+
+              <div class="chart-label-row">
+                <span>Em andamento</span>
+                <span id="labelAndamentoGrafico">0</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill bar-andamento" id="barAndamento"></div>
+              </div>
+
+              <div class="chart-label-row">
+                <span>Resolvidos</span>
+                <span id="labelResolvidosGrafico">0</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill bar-resolvidos" id="barResolvidos"></div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfraControl | Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <main class="login-wrapper">
+    <section class="login-card">
+      <div class="login-brand">
+        <span class="login-badge">Sistema Corporativo</span>
+        <h1>InfraControl</h1>
+        <p>Gestão inteligente de chamados, ativos e operação de TI.</p>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <h2>Acessar plataforma</h2>
+
+        <label for="loginUser">Usuário</label>
+        <input type="text" id="loginUser" placeholder="Digite seu usuário" required>
+
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
+
+        <button type="submit">Entrar</button>
+
+        <p class="login-hint">
+          Usuário: <strong>admin</strong> | Senha: <strong>1234</strong>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

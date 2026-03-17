@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfraControl | Relatórios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">IC</div>
+        <div>
+          <h2>InfraControl</h2>
+          <p>Operations Suite</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Dashboard</a>
+        <a href="chamados.html">Chamados</a>
+        <a href="ativos.html">Ativos</a>
+        <a href="usuarios.html">Usuários</a>
+        <a href="relatorios.html" class="active">Relatórios</a>
+        <a href="#" id="logoutBtn">Sair</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div>
+            <span class="page-kicker">Reports</span>
+            <h1>Relatórios Operacionais</h1>
+            <p>Indicadores visuais e acompanhamento consolidado.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggle" class="theme-toggle">🌙</button>
+          <div class="user-box">
+            <span>Administrador</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="cards cards-8">
+        <div class="metric-card">
+          <span class="metric-label">Total de Chamados</span>
+          <p id="cardTotalRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Abertos</span>
+          <p id="cardAbertosRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Em Andamento</span>
+          <p id="cardAndamentoRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Resolvidos</span>
+          <p id="cardResolvidosRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Total de Ativos</span>
+          <p id="cardTotalAtivosRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Operacionais</span>
+          <p id="cardAtivosOperacionaisRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Manutenção</span>
+          <p id="cardAtivosManutencaoRelatorio">0</p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-label">Disponíveis</span>
+          <p id="cardAtivosDisponiveisRelatorio">0</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Indicadores Visuais</h2>
+        </div>
+
+        <div class="chart-block">
+          <div class="chart-label-row">
+            <span>Chamados Abertos</span>
+            <span id="relatorioAbertosGrafico">0</span>
+          </div>
+          <div class="bar-bg">
+            <div class="bar-fill bar-abertos" id="relatorioBarAbertos"></div>
+          </div>
+
+          <div class="chart-label-row">
+            <span>Chamados em Andamento</span>
+            <span id="relatorioAndamentoGrafico">0</span>
+          </div>
+          <div class="bar-bg">
+            <div class="bar-fill bar-andamento" id="relatorioBarAndamento"></div>
+          </div>
+
+          <div class="chart-label-row">
+            <span>Chamados Resolvidos</span>
+            <span id="relatorioResolvidosGrafico">0</span>
+          </div>
+          <div class="bar-bg">
+            <div class="bar-fill bar-resolvidos" id="relatorioBarResolvidos"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

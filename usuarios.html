@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfraControl | Usuários</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">IC</div>
+        <div>
+          <h2>InfraControl</h2>
+          <p>Operations Suite</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Dashboard</a>
+        <a href="chamados.html">Chamados</a>
+        <a href="ativos.html">Ativos</a>
+        <a href="usuarios.html" class="active">Usuários</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="#" id="logoutBtn">Sair</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div>
+            <span class="page-kicker">People</span>
+            <h1>Equipe Técnica</h1>
+            <p>Visão dos profissionais alocados no atendimento.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggle" class="theme-toggle">🌙</button>
+          <div class="user-box">
+            <span>Administrador</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="cards cards-3">
+        <div class="metric-card">
+          <span class="metric-label">Técnicos Ativos</span>
+          <p>03</p>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Disponíveis</span>
+          <p>02</p>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Em Atendimento</span>
+          <p>01</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Equipe</h2>
+        </div>
+
+        <div class="user-grid">
+          <article class="user-card">
+            <h3>Herbert</h3>
+            <p>Função: Suporte de TI</p>
+            <span class="status resolvido">Disponível</span>
+          </article>
+
+          <article class="user-card">
+            <h3>Juliana</h3>
+            <p>Função: Analista de Infraestrutura</p>
+            <span class="status andamento">Em atendimento</span>
+          </article>
+
+          <article class="user-card">
+            <h3>Marcos</h3>
+            <p>Função: Field Service</p>
+            <span class="status resolvido">Disponível</span>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
