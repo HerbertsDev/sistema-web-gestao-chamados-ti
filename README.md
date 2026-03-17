@@ -42,9 +42,6 @@ Criar uma aplicação web capaz de organizar e apresentar informações operacio
 2. Abra o arquivo `login.html` ou `index.html`
 3. Utilize o sistema no navegador
 
-## Autor
-Herbert Da Silva Da Cruz
-
 ## Preview do projeto
 
 ### Tela de Login
@@ -69,3 +66,5 @@ Herbert Da Silva Da Cruz
 ### Ativos
 ![Ativos] <img width="1919" height="936" alt="relatorios" src="https://github.com/user-attachments/assets/1c11b6eb-dbc5-4222-9d49-33cb6eb76103" />
 
+## Autor
+Herbert Da Silva Da Cruz
