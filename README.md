@@ -44,3 +44,27 @@ Criar uma aplicação web capaz de organizar e apresentar informações operacio
 
 ## Autor
 Herbert Da Silva Da Cruz
+
+## Preview do projeto
+
+### Tela de Login
+![Tela de Login](login.png.png)
+
+### Dashboard
+![Dashboard 1](dashboard 1.png.png)
+
+![Dashboard 2](dashboard 2.png.png)
+
+### Chamados
+![Chamados 1](chamados 1.png.png)
+
+![Chamados 2](chamados 2.png.png)
+
+### Relatórios
+![Relatórios](relatorios.png.png)
+
+### Usuários
+![Usuários](usuarios.png.png)
+
+### Ativos
+![Ativos](ativos.png.png)
